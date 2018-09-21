@@ -1,0 +1,53 @@
+{
+  "projet": "CMS",
+  "projectPackage":"com.application.cms",
+  "entities": [
+      "user",
+    "authority",
+    "userDetailCms"
+  ],
+  "views": [
+    {
+      "name": "register",
+      "viewController": "register",
+      "viewModel": "register",
+      "action": ["save"],
+      "viewProperties": [
+        {
+          "title": "register.title",
+          "template": "register.html",
+          "extended": "default",
+          "type": "form",
+          "fields": [ "register.email","register.name", "register.firstname", "register.login", "register.password", "register.confirm_password", "register.id" ]
+        }
+      ]
+    }
+  ],
+  "controlleurs": [
+    {
+      "name": "register",
+      "basename" :  "/",
+      "methodes": [ "listUsers"]
+    }
+  ],
+  "services": [
+    {
+      "name": "user",
+      "methodes": [ "sendEmail", "checkLoginExists" ]
+    }
+  ],
+  "repositories": [
+    {
+      "name": "user",
+      "methodes": [ "findByLoginandPassword" ]
+    }
+  ],
+  "database" :{
+  	"type":"MYSQL",
+  	"host":"localhost",
+  	"port":"1503",
+  	"lgoin":"root",
+  	"password":"",
+  	"hibernateCache" :"ehcache"
+  	}
+}
