@@ -17,7 +17,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class GeneratorService {
 
-	public static String TEMPLATE_SERVER_DIR="src/main/resources/templates/server/";
+	// public static String TEMPLATE_SERVER_DIR="src/main/resources/templates/server/";
+	public static String TEMPLATE_SERVER_DIR="./";
 	public static String PROJECT_SERVER_OUTPUT_DIR="output/";
 	public static String SOURCE_JAVA_DIR= "src/main/java/";
 	public static String RESOURCE_DIR= "src/main/resources/";

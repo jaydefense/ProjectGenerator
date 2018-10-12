@@ -30,12 +30,15 @@ public class EjsEngine {
     }
 
     private String render(String templateResourcePath) throws IOException, ScriptException {
+        /*
         String templateString = getResourceAsString(templateResourcePath);
 
         JavaProjectBuilder javaProjectBuilder = new JavaProjectBuilder();
         javaProjectBuilder.addSourceTree(sourceRoot);
 
         return renderEjs(templateString, javaProjectBuilder);
+        */
+        return null;
     }
 
     private static String renderEjs(String templateString, Object model) throws ScriptException {
@@ -51,12 +54,17 @@ public class EjsEngine {
     }
 
     private static String getResourceAsString(String resourcePath) {
+            /*
         try {
             URL templateResourceUrl = Resources.getResource(resourcePath);
             return Resources.toString(templateResourceUrl, Charsets.UTF_8);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+            */
+        return null;
+
+
     }
 
 }

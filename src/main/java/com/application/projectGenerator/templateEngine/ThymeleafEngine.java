@@ -17,7 +17,7 @@ import com.application.projectGenerator.services.GeneratorService;
 
 public class ThymeleafEngine {
 	
-	public void convertTemplate(String filename){
+	public void convertTemplate(String pathToTemplate, String filename){
 	final TemplateEngine templateEngine = new TemplateEngine();
 	//final TemplateResolver templateResolver=new ClassLoaderTemplateResolver();
 	FileTemplateResolver templateResolver = new FileTemplateResolver();
@@ -34,7 +34,7 @@ public class ThymeleafEngine {
 	vars.put("ports", "test"); // ports);
 	final IContext ctx = new Context(Locale.FRENCH,vars);
 
-	filename = "D:/Projets/Workspace/WebService/Projet/ProjectGenerator/"+GeneratorService.TEMPLATE_SERVER_DIR +  filename ;
+	filename = pathToTemplate + "/" + GeneratorService.TEMPLATE_SERVER_DIR +  filename ;
 	final String result = templateEngine.process(filename, ctx);
 
 	System.out.println(result);

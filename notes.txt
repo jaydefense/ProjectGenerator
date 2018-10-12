@@ -1,2 +1,22 @@
-pojo g�n�r� sur http://www.jsonschema2pojo.org/
+pojo généré sur http://www.jsonschema2pojo.org/
+
+A partir de
+- une structure JSON indiquant les fichiers à copier/transformer
+- un répertoire Template
+Crée un répertoire de sortie avec la génération.
+
+test avec:
+{
+  "stack" :{    "stackElement": [
+        {
+            "condition": "gradle",
+            "path":"eee",
+            "templates": [
+                { "file": "gradle/wrapper/gradle-wrapper.jar", "method": "copy", "noEjs": true, "renameTo": ".editorconfig", "options": { "interpolate": "INTERPOLATE_REGEX"  }
+                }
+            ]
+        }
+      ]
+}
+}
 
