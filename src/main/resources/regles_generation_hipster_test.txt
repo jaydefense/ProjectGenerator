@@ -1,16 +1,7 @@
 {
-  "stackElement" :  [
+    "global": [
         {
             "templates": [
-                {
-                    "file": "gitignore",
-                    "renameTo":  ".gitignore"
-                },
-                {
-                    "file": "gitattributes",
-                    "renameTo": ".gitattributes",
-                    "method": "copy"
-                },
                 {
                     "file": "editorconfig",
                     "renameTo": ".editorconfig",
@@ -18,9 +9,9 @@
                 }
             ]
         }
-	,
-
-        {
+    ],
+    "jib": [
+		{
             "path": "src/main/jib/",
             "templates": [{"file": "entrypoint.sh"}]
         }

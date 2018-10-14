@@ -6,12 +6,20 @@
 package com.application.projectGenerator;
 
 import com.application.projectGenerator.bean.Stack;
+import com.application.projectGenerator.bean.StackElement;
 import com.application.projectGenerator.dto.Project;
 import com.application.projectGenerator.exceptions.BusinessException;
 import com.application.projectGenerator.services.GeneratorService;
 import com.application.projectGenerator.templateEngine.ThymeleafEngine;
 import com.application.projectGenerator.tools.FileTools;
+import com.application.projectGenerator.tools.NashhornTools;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Convertisseur De fichier CSV en JSON/XML
@@ -43,18 +51,24 @@ public class App
 
     		// test2
 			// lecture du fichier des regles
+		/*
 		try {
 			String rules = FileTools.readFile("src/main/resources/regles_generation_hipster_test.txt");
 
 			//create ObjectMapper instance
 			ObjectMapper objectMapper = new ObjectMapper();
-			Stack stack = objectMapper.readValue(rules , Stack.class);
-			System.out.println(objectMapper );
+			//Stack stack = objectMapper.readValue(rules , Stack.class);
+            TypeReference<HashMap<String, ArrayList<StackElement>>> typeRef = new TypeReference<HashMap<String, ArrayList<StackElement>>>() {};
+            Map<String, Object> stack = objectMapper.readValue(rules , typeRef);
+
+			System.out.println(objectMapper.toString() );
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+*/
 
-
+		// test de Nashhorn
+		NashhornTools.eval("test","test");
 		GeneratorService generatorService = new GeneratorService();
     		Project project;
 			try {
